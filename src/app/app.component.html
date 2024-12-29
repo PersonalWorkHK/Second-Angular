@@ -2,24 +2,20 @@
 
 <main>
   <ul id="users">
-    <li>
-      <app-user [avatar]="users[0].avatar" [name]="users[0].name"></app-user>
-    </li>
-    <li>
-      <app-user [avatar]="users[1].avatar" [name]="users[1].name"></app-user>
-    </li>
-    <li>
-      <app-user [avatar]="users[2].avatar" [name]="users[2].name"></app-user>
-    </li>
-    <li>
-      <app-user [avatar]="users[3].avatar" [name]="users[3].name"></app-user>
-    </li>
-    <li>
-      <app-user [avatar]="users[4].avatar" [name]="users[4].name"></app-user>
-    </li>
-    <li>
-      <app-user [avatar]="users[5].avatar" [name]="users[5].name"></app-user>
-    </li>
+    @for(user of App_users;track user.id){
 
+      <li>
+        <app-user [User_userSelected]="user" [User_selected]="user.id===App_SelectedUserId"  (User_select)="App_SelectedUser($event)"></app-user>
+      </li>
+    }
   </ul>
+
+  @if(App_Selecteduser){
+    <app-add-tasks [AddTasks_userId]="App_Selecteduser.id" [AddTasks_username]="App_Selecteduser.name"></app-add-tasks>
+  }
+  @else {
+    <p id="fallback">Select the user to see their ticket.</p>
+  }
 </main>
+
+

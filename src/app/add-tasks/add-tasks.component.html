@@ -1,0 +1,21 @@
+@if(AddTasks_NewTaskShow){
+<app-new-task (NewTask_closeAddNew)="AddTasks_CloseNewTasks()"
+    (NewTask_AddedTask)="AddTasks_NewTasksAdded($event)"></app-new-task>
+}
+<app-card>
+    <section id="tasks">
+        <header>
+            <h2>{{AddTasks_username}}'s Tasks</h2>
+            <menu>
+                <button (click)="AddTasks_NewTasks()">Add Task</button>
+            </menu>
+        </header>
+        <ul>
+            @for(task of AddTasks_getSelectedUserTask; track task.id){
+            <li>
+                <app-task [Task_userTask]="task" (Task_CompleteTask)="AddTasks_CompletedTask($event)"></app-task>
+            </li>
+            }
+        </ul>
+    </section>
+</app-card>
