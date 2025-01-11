@@ -4,7 +4,8 @@ import { NewTask } from '../../../model/NewTask';
 
 @Component({
   selector: 'app-new-task',
-  imports: [FormsModule],
+  standalone:false,
+  // imports: [FormsModule],
   templateUrl: './new-task.component.html',
   styleUrl: './new-task.component.css'
 })

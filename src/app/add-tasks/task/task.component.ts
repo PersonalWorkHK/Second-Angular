@@ -5,7 +5,8 @@ import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-task',
-  imports: [CardComponent, DatePipe],
+  standalone:false,
+  // imports: [CardComponent, DatePipe],
   templateUrl: './task.component.html',
   styleUrl: './task.component.css'
 })

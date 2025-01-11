@@ -10,8 +10,8 @@ import { TaskService } from "../../services/task.services";
   selector: 'app-add-tasks',
   templateUrl: './add-tasks.component.html',
   styleUrl: './add-tasks.component.css',
-  standalone: true,
-  imports: [TaskComponent, NewTaskComponent, CardComponent],
+  standalone: false,
+  //  imports: [TaskComponent, NewTaskComponent, CardComponent],
 })
 export class AddTaskComponent {
   @Input() AddTasks_username?: any;

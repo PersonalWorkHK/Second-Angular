@@ -11,8 +11,8 @@ import { FormsModule } from '@angular/forms';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  standalone:true,
-  imports: [HeaderComponent, UserComponent,AddTaskComponent]
+   standalone:false,
+  // imports: [HeaderComponent, UserComponent,AddTaskComponent]
 })
 export class AppComponent {
   App_users = DUMMY_USERS;

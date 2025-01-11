@@ -12,7 +12,8 @@ import { CardComponent } from "../shared/card/card.component";
 // const RandomIndex=Math.floor(Math.random() * DUMMY_USERS.length);
 @Component({
   selector: 'app-user',
-  imports: [CardComponent],
+   standalone: false,
+  // imports: [CardComponent],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css'
 })
@@ -22,7 +23,7 @@ export class UserComponent {
   // @Input({required:true}) name!: string;
   @Input({ required: true }) User_userSelected!: User
   @Output() User_select = new EventEmitter<string>();
-  @Input() User_selected?:boolean;
+  @Input() User_selected?: boolean;
   // avatar=input.required<string>();
   // name=input.required<string>();
   //  Users=signal(DUMMY_USERS[RandomIndex]);
